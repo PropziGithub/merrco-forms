@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <title>New - form</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,600;0,700;0,800;0,900;1,100;1,200&display=swap");
       @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400,600&display=swap");
@@ -12,63 +12,170 @@
         box-sizing: border-box;
       }
       body {
-        margin: 0;
         font-family: "Open Sans", sans-serif;
       }
+     
       h3 {
         font-family: "Poppins", sans-serif;
         font-weight: 600;
+        color: rgb(53, 52, 52);;
       }
+
       p,
       label {
         font-weight: 300;
       }
 
-      .sns-b-form-container {
-        background: #fbfbfb;
-        box-shadow: 2px 2px 10px #00000040;
-        border-radius: 5px;
+      #sns-form {
         padding: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        margin: 0px auto;
+        max-width: 500px;
+        font-family: Open-sans, sans-serif;
+        overflow: hidden;
+        overflow-y: hidden;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+      }
+      #sns-form-field-container {
+        width: 100%;
       }
 
-      .sns-b-form-container input[type="text"] {
+      #sns-form .sns-form-input-container {
         width: 100%;
-        padding: 20px 20px;
+      }
+      #sns-form .sns-form-input {
+        width: 100%;
         border: 0;
-        background: #f0f0f0;
-        margin: 10px 0 40px;
-        border-radius: 10px;
+        padding: 10px 10px;
+        margin: 10px 0 25px;
+        outline: 0;
+        background: rgb(236, 236, 236);
+        border-radius: 8px;
+        font-size: 16px;
+      }
+      #sns-form #sns-btn:disabled {
+        background-color: gray;
+        cursor: no-drop;
+      }
+      #sns-form #sns-btn {
+        display: block;
+        font-size: 16px;
+        background: #fe6c2c;
+        border: 0;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        padding: 9px 60px;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+        transition: opacity 0.3s;
+      }
+      #sns-form #sns-btn:hover {
+        opacity: 0.7;
+      }
+      #sns-form label {
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+      .sns-error {
+        color: red;
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 50px;
+      }
+      @media (min-width: 600px) {
+        #sns-form {
+          padding: 20px 30px 20px;
+        }
+        #sns-form-field-container {
+          display: flex;
+          justify-content: space-between;
+          gap: 20px;
+        }
+        
       }
     </style>
   </head>
+
   <body>
-    <div class="sns-b-form-container">
-      <section class="" style="width: 100%">
-        <h3>Get a free rate review!</h3>
-        <form action="" method="post">
-          <div>
-            <label for="">First Name*</label>
+    <form action="" method="post" id="sns-form">
+    <h3>Get a free rate review!</h3>
+      <p class="sns-error"></p>
+
+      <div id="sns-form-field-container">
+        <div class="sns-form-input-container">
+          <label for="">First Name *</label>
             <input
+              class="sns-form-input"
               type="text"
-              name="firstName"
-              id="firstName"
+              name="clientsfirstName"
               placeholder="First Name"
+              required
             />
-          </div>
-          <div>
-            <label for="">First Name*</label>
+        </div>
+        <div class="sns-form-input-container">
+          <label for="">Last Name *</label>
             <input
+              class="sns-form-input"
               type="text"
-              name="firstName"
-              id="firstName"
-              placeholder="First Name"
+              name="clientsLastName"
+              placeholder="Last Name"
+              required
             />
-          </div>
-        </form>
-      </section>
-    </div>
+        </div>
+      
+      </div>
+
+      <div id="sns-form-field-container">
+        <div class="sns-form-input-container">
+          <label for="">Email *</label>
+            <input
+              class="sns-form-input"
+              type="text"
+              name="ClientsEmail"
+              placeholder="Email"
+              required
+            />
+        </div>
+        <div class="sns-form-input-container">
+          <label for="">Phone *</label>
+            <input
+              class="sns-form-input"
+              type="tel"
+              name="phoneNumber"
+              placeholder="Phone"
+              required
+            />
+        </div>
+      </div>
+
+      <div id="sns-form-field-container">
+          <div class="sns-form-input-container">
+            <label for="">Company *</label>
+            <input
+              class="sns-form-input"
+              type="text"
+              name="companyName"
+              placeholder="Company"
+              required
+            />
+        </div>
+        <div class="sns-form-input-container">
+          <label for="">Promo Code</label>
+            <input
+              class="sns-form-input"
+              type="text"
+              name="promoCode"
+            />
+        </div>
+      </div>
+      </div>
+
+      <div style="display: flex; justify-content: center">
+        <button type="submit" id="sns-btn">Get My Rate Review</button>
+      </div>
+      <input type="hidden" name="pageSource" id="sp-page-source" />
+    </form>
   </body>
 </html>
+
