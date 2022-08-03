@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      #sp-form {
+        padding: 20px;
+        margin: 0px auto;
+        max-width: 500px;
+        font-family: Open-sans, sans-serif;
+        overflow: hidden;
+        overflow-y: hidden;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+      }
+      #sp-form-field-container {
+        width: 100%;
+      }
+
+      #sp-form .sp-form-input-container {
+        width: 100%;
+      }
+      #sp-form .sp-form-input {
+        width: 100%;
+        border: 0;
+        padding: 10px 10px;
+        margin: 10px 0 25px;
+        outline: 0;
+        background: rgb(236, 236, 236);
+        border-radius: 8px;
+        /* color: white; */
+        font-size: 16px;
+      }
+      #sp-form #sp-btn:disabled {
+        background-color: gray;
+        cursor: no-drop;
+      }
+      #sp-form #sp-btn {
+        display: block;
+        font-size: 16px;
+        background: #fe6c2c;
+        border: 0;
+        padding: 12px 85px;
+        border-radius: 5px;
+        color: white;
+        /* margin-top: 10px; */
+        cursor: pointer;
+        transition: opacity 0.3s;
+      }
+      #sp-form #sp-btn:hover {
+        opacity: 0.7;
+      }
+      #sp-form label {
+        font-size: 14px;
+        margin-bottom: 5px;
+        /* display: inline-block; */
+        /* color: white; */
+      }
+      .sp-error {
+        color: red;
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      /* #sp-form .sp-form-input:invalid {
+        border-bottom: 1px;
+        border-style: solid;
+        border-color: red;
+      } */
+      @media (min-width: 600px) {
+        #sp-form {
+          padding: 20px 30px 20px;
+        }
+        #sp-form-field-container {
+          display: flex;
+          justify-content: space-between;
+          gap: 20px;
+        }
+        #sp-form #sp-btn {
+        }
+        #sp-form .sp-form-input-container {
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <form
+      action="https://go.pardot.com/l/208702/2022-05-16/4397fn"
+      method="post"
+      id="sp-form"
+    >
+      <h5 style="margin: 10px 0 20px">
+        Make sure you get the credit for the referral!
+      </h5>
+      <p class="sp-error"></p>
+
+      <div id="sp-form-field-container">
+        <div class="sp-form-input-container">
+          <label for="">
+            <div>Employee Name*</div>
+            <input
+              class="sp-form-input"
+              type="text"
+              name="employeeName"
+              required
+            />
+          </label>
+        </div>
+        <div class="sp-form-input-container">
+          <label for="">
+            <div>Employee Email*</div>
+            <input
+              class="sp-form-input"
+              type="email"
+              name="employeeEmail"
+              required
+            />
+          </label>
+        </div>
+      
+      </div>
+
+      <div id="sp-form-field-container">
+        <div class="sp-form-input-container">
+          <label for="">
+            <div>Company Name*</div>
+            <input
+              class="sp-form-input"
+              type="text"
+              name="companyName"
+              required
+            />
+          </label>
+        </div>
+        <div class="sp-form-input-container">
+          <label for="">
+            <div>Phone Number*</div>
+            <input
+              class="sp-form-input"
+              type="tel"
+              name="phoneNumber"
+              required
+            />
+          </label>
+        </div>
+      </div>
+
+      <div id="sp-form-field-container">
+          <div class="sp-form-input-container">
+          <label for="">
+            <div>Client First Name*</div>
+            <input
+              class="sp-form-input"
+              type="text"
+              name="clientFirstName"
+              required
+            />
+          </label>
+        </div>
+        <div class="sp-form-input-container">
+          <label for="">
+            <div>Client's Last Name*</div>
+            <input
+              class="sp-form-input"
+              type="text"
+              name="clientsLastName"
+              required
+            />
+          </label>
+        </div>
+      </div>
+
+      <div id="sp-form-field-container">
+        <div class="sp-form-input-container">
+          <label for="">
+            <div>Client's Email*</div>
+            <input
+              class="sp-form-input"
+              type="email"
+              name="clientsEmail"
+              required
+            />
+          </label>
+        </div>
+        <div class="sp-form-input-container">
+          <label for="">
+            <div>Website</div>
+            <input class="sp-form-input" type="text" name="website" />
+          </label>
+        </div>
+      </div>
+
+
+      <div class="sp-form-input-container">
+        <label for="">
+          <div>Comment</div>
+          <textarea
+            name="comments"
+            class="sp-form-input"
+            style="resize: none"
+            rows="5"
+          >
+          </textarea>
+        </label>
+      </div>
+      <div style="display: flex; justify-content: center">
+        <button type="submit" id="sp-btn">Submit</button>
+      </div>
+      <input type="hidden" name="pageSource" id="sp-page-source" />
+    </form>
+
+    <script>
+      document.querySelector(".sp-error").style.display = "none";
+      if (window.location.search) {
+        const inputs = document.querySelectorAll("#sp-form input");
+        new URLSearchParams(window.location.search).forEach((value, key) => {
+          if (key == "errors") {
+            document.querySelector(".sp-error").style.display = "block";
+            if (Boolean(value)) {
+              document.querySelector(".sp-error").textContent =
+                "Error while submitting the form";
+            } else {
+              document.querySelector(".sp-error").textContent = "";
+            }
+          }
+
+          inputs.forEach((d, k) => {
+            if (d.name == key) {
+              d.value = value;
+            }
+          });
+        });
+      }
+
+    </script>
+  </body>
+</html>

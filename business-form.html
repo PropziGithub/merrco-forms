@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup - form</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,600;0,700;0,800;0,900;1,100;1,200&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400,600&display=swap");
+      * {
+        box-sizing: border-box;
+      }
+      .sns-form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .sns-form-container h1 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+      }
+      .sns-form-container {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+      }
+      .sns-form {
+        background: #fbfbfb;
+        box-shadow: 2px 2px 10px #00000040;
+        border-radius: 5px;
+        padding: 20px;
+      }
+      .sns-form input[type="text"],
+      .sns-form input[type="email"],
+      .sns-form select {
+        width: 100%;
+        padding: 12px 10px;
+        border: 0;
+        background: #f0f0f0;
+        margin: 10px 0 40px;
+      }
+      .sns-form label {
+        width: 100%;
+      }
+      .sns-form .sns-row {
+        display: flex;
+        gap: 20px;
+      }
+
+      .business {
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+      }
+
+      .business select {
+        margin: 0;
+        width: 400px;
+      }
+
+      .sns-btn {
+        background: #fe6c2c;
+        border: 0;
+        padding: 15px 60px;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+        transition: opacity 0.3s;
+        font-family: "Open Sans", sans-serif;
+        text-transform: uppercase;
+        font-weight: 900;
+        font-size: 16px;
+      }
+
+      @media (max-width: 768px) {
+        .sns-form .sns-row {
+          flex-direction: column;
+        }
+        .sns-form input[type="text"],
+        .sns-form input[type="email"],
+        .sns-form select {
+          margin-bottom: 10px;
+        }
+        .business {
+          align-items: initial;
+          margin-bottom: 20px;
+        }
+        .business select {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sns-form-container">
+      <form action="http" method="post" class="sns-form">
+        <h1>01 PERSONAL INFO: Let's Get To Know Each Other</h1>
+        <div class="sns-row">
+          <label>
+            First Name*
+            <input type="text" name="firstName" required />
+          </label>
+          <label>
+            Last Name*
+            <input type="text" name="lastName" required />
+          </label>
+          <label>
+            Email*
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            Phone number*
+            <input type="text" name="phoneNumber" required />
+          </label>
+        </div>
+
+        <div class="sns-row">
+          <label for="">
+            Business Name*
+            <input type="text" name="businessName" required />
+          </label>
+          <label for="">
+            Where is your business located?*
+            <select name="" id="">
+              <option value="canada">Canada</option>
+              <option value="usa">USA</option>
+            </select>
+          </label>
+        </div>
+        <div class="sns-row">
+          <label for="" style="display: flex; align-items: center">
+            <input
+              type="checkbox"
+              name="getEmails"
+              style="margin-right: 10px"
+            />
+            Would you like to receive emails on payment processing best
+            practices and innovations?
+          </label>
+        </div>
+
+        <h1>02 BUSINESS INFO: Help Us Get To Know Your Business</h1>
+        <div class="sns-row business">
+          <span>Which of these best describes you?*</span>
+          <div>
+            <select name="">
+              <option value="This is my first time using payment processing">
+                This is my first time using payment processing
+              </option>
+              <option value="I have used a payment processing partner before">
+                I have used a payment processing partner before
+              </option>
+              <option
+                value="I currently use a different payment processing partner"
+              >
+                I currently use a different payment processing partner
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <div class="sns-row business">
+          <div>
+            How much credit card processing do you expect<br />to do in the next
+            12 months?*
+            <small style="font-style: italic; display: block; margin-top: 10px">
+              The dollar amount that you take from credit cards is the <br />
+              information that helps us build the best possible solution<br />for
+              your unique needs
+            </small>
+          </div>
+          <div>
+            <select name="">
+              <option value="Less than $40,000">Less than $40,000</option>
+              <option value="$40,000 to $200,000">$40,000 to $200,000</option>
+              <option value="$200,000 to $5 million">
+                $200,000 to $5 million
+              </option>
+              <option value="more than $5 million">more than $5 million</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="sns-row business">
+          <div>
+            Which of the following industries best describes<br />
+            your business?*
+          </div>
+          <div>
+            <select name="">
+              <option value="Beauty and Health Care">
+                Beauty and Health Care
+              </option>
+              <option value="Retail Trade">Retail Trade</option>
+              <option value="Wholesale Trade">Wholesale Trade</option>
+              <option value="Construction and Repair">
+                Construction and Repair
+              </option>
+              <option value="Manufacturing">Manufacturing</option>
+              <option value="Professional Services">
+                Professional Services
+              </option>
+              <option value="Transportation">Transportation</option>
+              <option value="Finance, Insurance and Real Estate">
+                Finance, Insurance and Real Estate
+              </option>
+              <option value="Agriculture, Forestry and Fishing">
+                Agriculture, Forestry and Fishing
+              </option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="sns-row business">
+          <div>How do you expect to accept credit cards?*</div>
+          <div>
+            <select name="">
+              <option value="This is my first time using payment processing">
+                This is my first time using payment processing
+              </option>
+              <option value="I have used a payment processing partner before">
+                I have used a payment processing partner before
+              </option>
+              <option
+                value="I currently use a different payment processing partner"
+              >
+                I currently use a different payment processing partner
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <div class="sns-row business">
+          <div>
+            Please provide your phone number.*
+            <small style="font-style: italic; display: block; margin-top: 10px">
+              A payment advisor will call to guide you through<br />
+              your merchant account application.
+            </small>
+          </div>
+          <div>
+            <select name="">
+              <option value="Card present (swiper, terminals)">
+                Card present (swiper, terminals)
+              </option>
+              <option value="Card not present (phone, online, invoicing, etc.)">
+                Card not present (phone, online, invoicing, etc.)
+              </option>
+              <option value="Both (card present & not present)">
+                Both (card present & not present)
+              </option>
+            </select>
+          </div>
+        </div>
+        <div style="display: flex; justify-content: center">
+          <button type="submit" class="sns-btn">Complete Signup</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
