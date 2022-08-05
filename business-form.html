@@ -117,7 +117,7 @@
         <div class="sns-row">
           <label for="">
             Business Name*
-            <input type="text" name="businessName" required />
+            <input type="text" name="companyName" required />
           </label>
           <label for="">
             Where is your business located?*
@@ -129,14 +129,20 @@
         </div>
         <div class="sns-row">
           <label for="" style="display: flex; align-items: center">
-            <input
-              type="checkbox"
-              name="getEmails"
-              style="margin-right: 10px"
-            />
-            Would you like to receive emails on payment processing best
-            practices and innovations?
-          </label>
+            <select
+            name="getEmail"
+            style="margin-right: 20px; width:75px; margin-top: 30px;"
+            >
+            <option value="yes">
+              yes
+            </option>
+            <option value="no">
+              no
+            </option>
+          </select>
+          Would you like to receive emails on payment processing best
+          practices and innovations?
+        </label>
         </div>
 
         <h1>02 BUSINESS INFO: Help Us Get To Know Your Business</h1>
