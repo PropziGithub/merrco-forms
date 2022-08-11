@@ -21,19 +21,23 @@
       }
       #sp-form-field-container {
         width: 100%;
+        display: flex;
+        flex-direction: row;
       }
 
       #sp-form .sp-form-input-container {
         width: 100%;
+        border: 0 0 3px;
       }
       #sp-form .sp-form-input {
         width: 100%;
-        border: 0;
+        border-width: 0 0 3px;
+        border-color: black;
         padding: 10px 10px;
         margin: 10px 0 25px;
         outline: 0;
-        background: rgb(236, 236, 236);
-        border-radius: 8px;
+        /* background: rgb(236, 236, 236); */
+        /* border-radius: 8px; */
         /* color: white; */
         font-size: 16px;
       }
@@ -68,6 +72,10 @@
         text-align: center;
         margin-bottom: 50px;
       }
+      select {
+        border: 0;
+        outline: 0;
+      }
 
       /* #sp-form .sp-form-input:invalid {
         border-bottom: 1px;
@@ -93,7 +101,7 @@
 
   <body>
     <form
-      action="https://go.pardot.com/l/208702/2022-05-16/4397fc"
+      action="http://go.pardot.com/l/208702/2022-08-11/4hpnwr"
       method="post"
       id="sp-form"
     >
@@ -108,7 +116,7 @@
             <input
               class="sp-form-input"
               type="text"
-              name="firstName"
+              name="clientsFirstName"
               required
             />
           </label>
@@ -116,7 +124,12 @@
         <div class="sp-form-input-container">
           <label for="">
             <div>Last Name*</div>
-            <input class="sp-form-input" type="text" name="lastName" required />
+            <input
+              class="sp-form-input"
+              type="text"
+              name="clientsLastName"
+              required
+            />
           </label>
         </div>
       </div>
@@ -125,7 +138,12 @@
         <div class="sp-form-input-container">
           <label for="">
             <div>Email*</div>
-            <input class="sp-form-input" type="email" name="email" required />
+            <input
+              class="sp-form-input"
+              type="email"
+              name="clientsEmail"
+              required
+            />
           </label>
         </div>
         <div class="sp-form-input-container">
@@ -162,24 +180,111 @@
         </div>
       </div>
 
-      <div style="display: flex; justify-content: center">
+      <div id="sp-form-field-container">
+        <div class="sp-form-input-container">
+          <label for="">
+            <div>Country*</div>
+          </label>
+          <div style="">
+            <select name="country" style="width: 100%; padding: 10px">
+              <option value="" selected>Select one...</option>
+              <option value="canada">Canada</option>
+              <option value="usa">USA</option>
+            </select>
+            <div
+              style="
+                width: 100%;
+                height: 3px;
+                border: 3px;
+                border-color: black;
+                background: #000;
+              "
+            ></div>
+          </div>
+        </div>
+        <div class="sp-form-input-container">
+          <label for="">
+            <div>Interest Type</div>
+          </label>
+          <div style="">
+            <select name="interestType" style="width: 100%; padding: 10px">
+              <option value="" selected>Select one...</option>
+              <option value="Beauty and Health Care">
+                I am interested in partnering with you.
+              </option>
+              <option value="Beauty and Health Care">
+                I am interested in merchant services.
+              </option>
+              </select>
+            <div
+              style="
+                width: 100%;
+                height: 3px;
+                border: 3px;
+                border-color: black;
+                background: #000;
+              "
+            ></div>
+          </div>
+        </div>
+      </div>
+      <div class="sp-form-input-container" style="margin-top: 25px">
+        <label for="">
+          <div>Industry Type</div>
+        </label>
+        <div style="">
+          <select name="industryType" style="width: 100%; padding: 10px">
+            <option value="" selected>Select one...</option>
+            <option value="Beauty and Health Care">
+              Beauty and Health Care
+            </option>
+            <option value="Retail Trade">Retail Trade</option>
+            <option value="Construction and Repair">
+              Construction and Repair
+            </option>
+            <option value="Manufacturing">Manufacturing</option>
+            <option value="Professional Services">
+              Professional Services
+            </option>
+            <option value="Transportation">Transportation</option>
+            <option value="Finance, Insurance and Real Estate">
+              Finance, Insurance and Real Estate
+            </option>
+            <option value="Agriculture, Forestry and Fishing">
+              Agriculture, Forestry and Fishing
+            </option>
+            <option value="Other">Other</option>
+        
+          </select>
+          <div
+            style="
+              width: 100%;
+              height: 3px;
+              border: 3px;
+              border-color: black;
+              background: #000;
+            "
+          ></div>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: center; margin-top: 25px">
         <button type="submit" id="sp-btn">Submit</button>
       </div>
       <input type="hidden" name="pageSource" id="sp-page-source" />
     </form>
 
     <script>
-      document.querySelector(".sp-error").style.display = "none";
+      document.querySelector('.sp-error').style.display = 'none';
       if (window.location.search) {
-        const inputs = document.querySelectorAll("#sp-form input");
+        const inputs = document.querySelectorAll('#sp-form input');
         new URLSearchParams(window.location.search).forEach((value, key) => {
-          if (key == "errors") {
-            document.querySelector(".sp-error").style.display = "block";
+          if (key == 'errors') {
+            document.querySelector('.sp-error').style.display = 'block';
             if (Boolean(value)) {
-              document.querySelector(".sp-error").textContent =
-                "Error while submitting the form";
+              document.querySelector('.sp-error').textContent =
+                'Error while submitting the form';
             } else {
-              document.querySelector(".sp-error").textContent = "";
+              document.querySelector('.sp-error').textContent = '';
             }
           }
 
@@ -190,7 +295,6 @@
           });
         });
       }
-  
     </script>
   </body>
 </html>
