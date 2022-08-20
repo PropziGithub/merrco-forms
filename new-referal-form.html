@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap");
+      * {
+        box-sizing: border-box;
+        font-family: "Lato", sans-serif;
+      }
+      .sp-form-container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .sp-ref-form {
+        width: 100%;
+      }
+      .sp-form-input-container {
+        display: flex;
+        flex-direction: column;
+      }
+      .sp-form-input-container span {
+        color: rgb(208, 7, 7);
+        font-size: 18px;
+      }
+      .sp-form-input-container input,
+      .sp-form-input-container textarea {
+        width: 100%;
+        padding: 12px 10px;
+        margin: 10px 0;
+        font-size: 16px;
+        background: #f3f3f3;
+        border: 1px solid #ddd;
+      }
+      .sp-form-input-container div {
+        color: rgb(188, 188, 188);
+      }
+      .btn {
+        padding: 15px 20px;
+        background: #fe6c2c;
+        color: white;
+        border: 0;
+        border-radius: 5px;
+        margin-top: 30px;
+        font-size: 18px;
+      }
+      @media (min-width: 768px) {
+        .sp-form-container {
+          width: 500px;
+          margin: auto;
+        }
+        .sp-form-input-container {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="sp-form-container">
+      <div class="" style="width: 100%">
+        <h1>Refer your member to Payfirma today!</h1>
+        <form action="" class="sp-ref-form">
+          <div class="sp-form-input-container">
+            <div style="width: 50%">Branch Name<span>*</span></div>
+            <input type="text" name="branchName" />
+          </div>
+          <div class="sp-form-input-container">
+            <div style="width: 50%">Employee Name<span>*</span></div>
+            <input type="text" name="employeeName" />
+          </div>
+          <div class="sp-form-input-container">
+            <div style="width: 50%">Employee Email<span>*</span></div>
+            <input type="text" name="employeeEmail" />
+          </div>
+          <h4>The following fields are for the member you're referring:</h4>
+          <div class="sp-form-input-container">
+            <div style="width: 50%">First Name<span>*</span></div>
+            <input type="text" name="firstName" />
+          </div>
+          <div class="sp-form-input-container">
+            <div style="width: 50%">Last Name<span>*</span></div>
+            <input type="text" name="lastName" />
+          </div>
+          <div class="sp-form-input-container">
+            <div style="width: 50%">Email<span>*</span></div>
+            <input type="text" name="email" />
+          </div>
+          <div class="sp-form-input-container">
+            <div style="width: 50%">Company<span>*</span></div>
+            <input type="text" name="company" />
+          </div>
+          <div class="sp-form-input-container">
+            <div style="width: 50%">Phone<span>*</span></div>
+            <input type="text" name="phone" />
+          </div>
+          <div class="sp-form-input-container">
+            <div style="width: 50%">Comments<span>*</span></div>
+            <textarea type="text" name="comments"> </textarea>
+          </div>
+          <div
+            style="display: flex; justify-content: center; align-items: center"
+          >
+            <button type="submit" class="btn">Refer member</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>
